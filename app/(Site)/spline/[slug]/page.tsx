@@ -1,4 +1,3 @@
-'use client';
 import { AnimatedElement } from '@/components/AnimatedComponent/AnimatedComponent';
 import PageComponents from '@/components/PageComponents/PageComponents';
 import PageWrapper from '@/components/PageWrapper/PageWrapper';
