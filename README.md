@@ -10,7 +10,7 @@ This project is built with [Next.js](https://nextjs.org/), [Tailwind CSS](https:
 
 ### System Requirements
 
-- [Node.js 21.6.2](https://nodejs.org/) or later
+- [Node.js 22.23.4](https://nodejs.org/) or later
 - [Yarn 1](https://classic.yarnpkg.com/lang/en/)
 
 ### Setup
