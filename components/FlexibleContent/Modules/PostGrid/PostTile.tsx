@@ -8,8 +8,8 @@ import { AnimatedElement } from '@/components/AnimatedComponent/AnimatedComponen
 import ImageBox from '@/components/ImageBox/ImageBox';
 import { SLUG } from '@/lib/constants';
 import type { PostSchemaType } from '@/schemas/documents/post';
+import { log } from '@/lib/logger';
 import s from './PostTile.module.sass';
-import {log} from "@/lib/logger";
 
 export default function PostTile({
   post: { author, excerpt, title, featuredImage, slug, datePosted },
@@ -23,7 +23,6 @@ export default function PostTile({
   isTitle?: boolean;
 }) {
   const imageUrl = urlForImage(featuredImage)?.url();
-
 
   if (!imageUrl) {
     log.error(`No image URL for ${title}`);
@@ -48,7 +47,7 @@ export default function PostTile({
         delay={100}
         disabled={!isFeatured}
       >
-        {imageUrl ?
+        {imageUrl ? (
           <ImageBox
             className={clsx('w-full')}
             src={imageUrl}
@@ -56,7 +55,7 @@ export default function PostTile({
             height={345}
             alt={`Featured image for ${title}`}
           />
-        : null}
+        ) : null}
       </AnimatedElement>
       <AnimatedElement
         className={clsx(isFeatured && 'flex flex-col justify-center')}
