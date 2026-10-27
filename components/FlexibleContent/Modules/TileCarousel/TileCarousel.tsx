@@ -148,9 +148,7 @@ export default function TileCarousel({
                         dangerouslySetInnerHTML={{ __html: tileTitle }}
                       />
                     )}
-                    <p className={clsx('text-sm leading-snug', 'xl:text-lg', 'mb-5')}>
-                      {copy}
-                    </p>
+                    <p className={clsx('text-sm leading-snug', 'xl:text-lg', 'mb-5')}>{copy}</p>
                     {linkLabel && (
                       <Button
                         title={linkLabel}

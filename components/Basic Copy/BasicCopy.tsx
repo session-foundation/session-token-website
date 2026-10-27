@@ -18,9 +18,8 @@ export default function BasicCopy({
 }) {
   const mainRef = useRef<any>();
 
-  const allH2s = (copy?.filter(
-    (block) => block._type === 'block' && block.style === 'h2'
-  ) ?? []) as Array<CopyBlock>;
+  const allH2s = (copy?.filter((block) => block._type === 'block' && block.style === 'h2') ??
+    []) as Array<CopyBlock>;
 
   return (
     <section className={clsx(s.Outer, 'post-content mb-48 mt-24 flex w-full gap-12')}>
