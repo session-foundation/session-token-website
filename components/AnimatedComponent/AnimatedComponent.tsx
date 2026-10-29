@@ -53,8 +53,6 @@ export const AnimatedElement = ({
       ref(node);
 
       if (innerRef) {
-        // TODO: FIX THIS NIGHTMARE
-        // @ts-expect-error - innerRef is a ref object
         // eslint-disable-next-line no-param-reassign
         innerRef.current = node;
       }

@@ -1,6 +1,7 @@
 import { log } from '@/lib/logger';
 import type { ModulesArraysSchemaType } from '@/schemas/documents/flexibleSections';
 import type { SettingsSchemaType } from '@/schemas/singletons/settings';
+import type { JSX } from 'react';
 import BasicCopy from '../Basic Copy/BasicCopy';
 import ComingSoon from './Modules/ComingSoon/ComingSoon';
 import CopyAndImage from './Modules/CopyAndImage/CopyAndImage';

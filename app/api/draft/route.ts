@@ -20,7 +20,7 @@ export async function GET(request: NextRequest) {
     );
   }
 
-  draftMode().enable();
+  (await draftMode()).enable();
 
   return new Response(null, {
     status: 307,

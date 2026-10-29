@@ -8,8 +8,11 @@ import { generateRssFeed } from '@/lib/rss';
 import { getDocumentData } from '@/lib/sanity.fetch';
 import { CMSDocument, SPECIAL_SELECT, sanityQuery } from '@/lib/sanity.queries';
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const { settings, page } = await getDocumentData(CMSDocument.Post, params.slug);
+type Props = { params: Promise<{ slug: string }> };
+
+export async function generateMetadata({ params }: Props) {
+  const { slug } = await params;
+  const { settings, page } = await getDocumentData(CMSDocument.Post, slug);
   return metadata(page, settings);
 }
 
@@ -23,15 +26,15 @@ export async function generateStaticParams() {
   return allPosts.map(({ slug }) => ({ slug: slug.current }));
 }
 
-export default async function UpdatesPage({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+export default async function UpdatesPage({ params }: Props) {
+  const { slug } = await params;
   const post = await sanityQuery
     .from(CMSDocument.Post)
     .select([SPECIAL_SELECT[CMSDocument.Post]])
     .eq('slug.current', slug)
     .executeSingle();
 
-  const isDraft = draftMode().isEnabled;
+  const isDraft = (await draftMode()).isEnabled;
 
   if (!post && !isDraft) {
     notFound();

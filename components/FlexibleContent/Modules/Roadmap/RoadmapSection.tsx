@@ -206,7 +206,6 @@ const RoadmapSection = forwardRef<HTMLDivElement, RoadmapSectionProps>(
 
     const { scrollYProgress } = useScroll({
       target: scrollRef,
-      smooth: 0.5,
       offset: ['start center', 'end center'],
     });
 
