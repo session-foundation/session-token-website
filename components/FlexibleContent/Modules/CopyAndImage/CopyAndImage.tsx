@@ -39,7 +39,7 @@ export default function CopyAndImage(props: CopyAndImageProps) {
   } = props;
 
   if (!mobileAlignment || !desktopAlignment) {
-    // eslint-disable-next-line no-console
+    // biome-ignore lint/suspicious/noConsole: flags deprecated CMS fields to editors
     console.warn(
       '@deprecated A CopyAndImage component is using a depricated schema field. Please update the schema.'
     );

@@ -6,7 +6,7 @@
   "recommendations": [
     "syler.sass-indented",
     "bradlc.vscode-tailwindcss",
-    "dbaeumer.vscode-eslint",
+    "biomejs.biome",
     "esbenp.prettier-vscode",
     "usernamehw.errorlens",
     "vivaxy.vscode-conventional-commits"

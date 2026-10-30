@@ -12,7 +12,6 @@ export async function TabButton({ image, active }: { image: SanityImage; active:
     return null;
   }
 
-  // eslint-disable-next-line more/no-then
   const svgData = await fetch(src).then((res) => res.text());
 
   // remove width and height from svg

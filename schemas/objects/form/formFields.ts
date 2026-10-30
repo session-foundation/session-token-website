@@ -27,7 +27,7 @@ const formFields = defineType({
       title: 'Field ID',
       type: 'slug',
       options: {
-        source: (doc, options) => {
+        source: (_doc, options) => {
           if (!options.parent) {
             throw new Error('Parent is missing');
           } else if (

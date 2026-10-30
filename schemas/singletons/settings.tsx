@@ -1,4 +1,3 @@
-/* eslint-disable react/display-name */
 import type { DocumentFields, SchemaFields } from '@/lib/sanity.types';
 import { CogIcon, DocumentIcon } from '@sanity/icons';
 import { defineArrayMember, defineField, defineType } from 'sanity';

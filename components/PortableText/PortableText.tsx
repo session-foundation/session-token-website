@@ -11,7 +11,7 @@ const Image = ({ value }: { value: any }) => {
   }
 
   return (
-    // eslint-disable-next-line @next/next/no-img-element -- TODO: replace with next/image
+    // biome-ignore lint/performance/noImgElement: TODO replace with next/image
     <img src={imageUrl} alt={''} />
   );
 };
