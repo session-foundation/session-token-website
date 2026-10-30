@@ -13,8 +13,11 @@ const landingSlug = 'home';
 
 const parseSlug = (slug?: Array<string>) => slug?.join('/') ?? landingSlug;
 
-export async function generateMetadata({ params }: { params: { slug: Array<string> } }) {
-  const { settings, page } = await getDocumentData(CMSDocument.Page, parseSlug(params.slug));
+type Props = { params: Promise<{ slug?: Array<string> }> };
+
+export async function generateMetadata({ params }: Props) {
+  const { slug } = await params;
+  const { settings, page } = await getDocumentData(CMSDocument.Page, parseSlug(slug));
 
   if (!page || !page.title || page.title === '') {
     return metadata({ title: 'Page not found' }, settings);
@@ -33,11 +36,11 @@ export async function generateStaticParams() {
   return pages.map(({ slug }) => ({ slug: [slug.current] }));
 }
 
-export default async function PageSlugRoute({ params }: { params: { slug: Array<string> } }) {
-  const pageSlug = parseSlug(params.slug);
+export default async function PageSlugRoute({ params }: Props) {
+  const pageSlug = parseSlug((await params).slug);
   const { settings, page } = await getDocumentData(CMSDocument.Page, pageSlug);
 
-  if (!page && !draftMode().isEnabled) {
+  if (!page && !(await draftMode()).isEnabled) {
     notFound();
   }
 

@@ -31,7 +31,7 @@ export interface SplineModelProps extends React.HTMLAttributes<HTMLDivElement> {
 
 const SplineModel = forwardRef<HTMLDivElement, SplineModelProps>(
   ({ className, splineScene, spineSceneUrl, fallbackImage, ...props }, ref) => {
-    const spline = useRef<SplineScene>();
+    const spline = useRef<SplineScene>(undefined);
 
     function onLoad(scene: SplineScene) {
       spline.current = scene;

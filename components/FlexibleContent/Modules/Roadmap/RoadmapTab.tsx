@@ -6,7 +6,7 @@ import RoadmapSection from './RoadmapSection';
 
 // NOTE - Timeline selector hidden for now
 export default function RoadmapTab({ tab, children }: { tab: any; children: React.ReactNode }) {
-  const sectionsRef = useRef<Map<any, any>>();
+  const sectionsRef = useRef<Map<any, any>>(undefined);
 
   const sections = tab?.roadmapSections.map((section) => section);
 

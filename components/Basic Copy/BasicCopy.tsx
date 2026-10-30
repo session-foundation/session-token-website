@@ -16,7 +16,7 @@ export default function BasicCopy({
   showOutline: boolean;
   outlineHeading?: string;
 }) {
-  const mainRef = useRef<any>();
+  const mainRef = useRef<any>(undefined);
 
   const allH2s = (copy?.filter((block) => block._type === 'block' && block.style === 'h2') ??
     []) as Array<CopyBlock>;

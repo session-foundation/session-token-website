@@ -34,11 +34,12 @@ const OptionalPreviewProvider = ({
 };
 
 export default async function SiteLayout({ children }: { children: ReactNode }) {
+  const draft = await draftMode();
   if (isEnv(Environment.DEV) || isEnv(Environment.QA)) {
-    draftMode().enable();
+    draft.enable();
   }
 
-  const isDraftMode = draftMode().isEnabled;
+  const isDraftMode = draft.isEnabled;
   const settings = await getSettings();
 
   return (
