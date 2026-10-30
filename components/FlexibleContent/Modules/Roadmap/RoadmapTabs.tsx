@@ -41,6 +41,5 @@ export async function getSvgData({ image }: { image: SanityImage }): Promise<str
     return '';
   }
 
-  // eslint-disable-next-line more/no-then
   return fetch(src).then((res) => res.text());
 }

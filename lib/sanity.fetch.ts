@@ -27,7 +27,6 @@ export async function sanityFetch<QueryResponse>({
 
   if (isServer) {
     try {
-      // eslint-disable-next-line @typescript-eslint/no-var-requires, global-require
       const { draftMode } = require('next/headers');
 
       isDraftMode = (await draftMode()).isEnabled;

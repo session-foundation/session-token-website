@@ -1,6 +1,3 @@
-/* eslint-disable no-restricted-globals */
-/* eslint-disable react/prop-types */
-
 'use client';
 
 import { forwardRef, useEffect, useId, useRef, type HTMLAttributes } from 'react';

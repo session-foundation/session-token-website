@@ -1,4 +1,4 @@
-/* eslint-disable no-console */
+/** biome-ignore-all lint/suspicious/noConsole: this is the logger */
 import { isProduction } from './env';
 
 class Logger {

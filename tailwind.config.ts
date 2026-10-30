@@ -85,6 +85,5 @@ export default {
     },
   },
 
-  /* eslint-disable-next-line global-require */
   plugins: [require('tailwindcss-selection-variant'), require('@tailwindcss/container-queries')],
 } satisfies Config;

@@ -53,7 +53,6 @@ export const AnimatedElement = ({
       ref(node);
 
       if (innerRef) {
-        // eslint-disable-next-line no-param-reassign
         innerRef.current = node;
       }
     },

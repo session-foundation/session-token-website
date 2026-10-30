@@ -10,7 +10,7 @@ const environments = [Environment.PRD, Environment.STG, Environment.QA, Environm
 export const getEnvironment = (): Environment => {
   const environment = process.env.NEXT_PUBLIC_ENV_FLAG;
   if (!environment || !environments.includes(environment as Environment)) {
-    // eslint-disable-next-line no-console
+    // biome-ignore lint/suspicious/noConsole: a bad env flag has to show up in the server log
     console.warn(`Invalid environment flag (NEXT_PUBLIC_ENV_FLAG): ${environment}`);
     return Environment.DEV;
   }

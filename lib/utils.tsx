@@ -5,7 +5,6 @@ import { throttle } from 'lodash';
 import { useEffect, useRef, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-/* eslint-disable max-len */
 export const getSocialIcon = (company) => {
   switch (company) {
     case 'x':
@@ -184,7 +183,6 @@ export const getSocialIcon = (company) => {
       );
   }
 };
-/* eslint-enable max-len */
 
 export const getShareSites = (currentUrl) => {
   return [

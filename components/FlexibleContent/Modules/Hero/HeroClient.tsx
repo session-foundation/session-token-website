@@ -45,7 +45,7 @@ export default function HeroClient(props: HeroClientProps) {
 
   // TODO - Remove DepricatedHero support when all heros are updated
   if (!_variant || !image) {
-    // eslint-disable-next-line no-console
+    // biome-ignore lint/suspicious/noConsole: flags deprecated CMS fields to editors
     console.warn(
       '@deprecated A Hero component is using a depricated schema field. Please update the schema.'
     );
