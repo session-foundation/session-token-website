@@ -9,6 +9,7 @@ const ContentSecurityPolicy = `
   connect-src *;
   font-src 'self' blob: data: fonts.gstatic.com maxcdn.bootstrapcdn.com;
   worker-src 'self' blob:;
+  frame-ancestors 'self' https://www.sanity.io;
 `;
 
 const securityHeaders = () => {
@@ -24,10 +25,6 @@ const securityHeaders = () => {
     {
       key: 'X-XSS-Protection',
       value: '1; mode=block',
-    },
-    {
-      key: 'X-Frame-Options',
-      value: 'SAMEORIGIN',
     },
     {
       key: 'Permissions-Policy',
